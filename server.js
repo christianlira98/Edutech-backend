@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || port);
 app.use(bodyParser.json());
 app.use(cors())
 
-mongoose.connect(uri, { useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true });
 
 mongoose.connection.on('connected', function () {
   console.log('Connected to Database EduTech!');
