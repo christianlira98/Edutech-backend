@@ -1,10 +1,12 @@
+
+require("dotenv").config();
 const express    = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const mongoose = require('mongoose');
 
 const port = 5000;
-const uri = "mongodb+srv://admin:admin@cluster0.ewelv.mongodb.net/test?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URL;
 
 const app = express();
 
@@ -41,7 +43,7 @@ app.use(function(err, req, res, next){
 });
 
 // RODANDO A APLICAÇÃO NA PORTA SETADA
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`)
 });
 
