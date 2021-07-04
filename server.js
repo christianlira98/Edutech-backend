@@ -4,7 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose');
 
 const port = 5000;
-const uri = "mongodb+srv://admin:admin@cluster0.ewelv.mongodb.net/test?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URL;
 
 const app = express();
 
